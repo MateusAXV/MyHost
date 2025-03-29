@@ -1,2 +1,0 @@
-# MyHost
-host para pruebas 
