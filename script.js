@@ -10,9 +10,14 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const validUser = users.find(user => user.username === username && user.password === password);
 
     if (validUser) {
+
+        let token = generateToken(); // Genera un token aleatorio
+        let expirationTime = Date.now() + 10 * 60 * 1000; // Expira en 10 minutos (10 * 60 * 1000 ms)
+
+
         //uso del token
-        let token = generateToken();
-        localStorage.setItem("authToken", token);
+        localStorage.setItem("authToken", token);//guarda el token generado
+        localStorage.setItem("authTokenExpiration", expirationTime);//expiracion token
 
         alert("Inicio de sesión exitoso");
         window.location.href = "menuPrincipal.html"; // Redirige al menú principal
@@ -26,7 +31,9 @@ function generateToken() { //genera token
     window.crypto.getRandomValues(array);
     return array[0].toString(16); // Convierte el número en hexadecimal
 }
+
 function logout() {
-    localStorage.removeItem("authToken"); // Elimina el token
-    window.location.href = "index.html"; // Redirige al login
+    let array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    return array[0].toString(16);
 }
