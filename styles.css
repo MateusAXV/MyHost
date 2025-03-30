@@ -40,7 +40,8 @@ button {
     width: 200PX;
     border-radius: 20px;
     font-size: 16px; /* Hace el texto más legible */
-    margin-bottom: 20px; /* Espacio entre el campo de contraseña y el botón */
+    margin-bottom: 30px; /* Espacio entre el campo de contraseña y el botón */
+    margin-top: 30px; 
 }
 
 button:hover {
@@ -57,6 +58,16 @@ button:hover {
     text-align: center;
     font-size: 24px;
     margin-bottom: 15px; /* Espacio entre el título y el cuadro */
+}
+
+.ball8 {
+    position: fixed;   /* Fija el elemento en la pantalla */
+    top: 10px;         /* Distancia desde la parte superior */
+    right: 10px;        /* Distancia desde la izquierda */
+    padding: 10px;     /* Espaciado interno */
+    font-size: 16px;   /* Tamaño de la letra */
+    font-size: 37px;
+
 }
 
 .menu-container {
