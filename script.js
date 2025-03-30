@@ -26,3 +26,7 @@ function generateToken() { //genera token
     window.crypto.getRandomValues(array);
     return array[0].toString(16); // Convierte el número en hexadecimal
 }
+function logout() {
+    localStorage.removeItem("authToken"); // Elimina el token
+    window.location.href = "index.html"; // Redirige al login
+}
